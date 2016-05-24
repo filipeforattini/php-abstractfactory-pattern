@@ -1,1 +1,1 @@
-# php-abstractfactory-pattern
+# PHP Abstract Factory Pattern
