@@ -1,6 +1,7 @@
 {
     "name": "filipeforattini/php-abstractfactory-pattern",
     "description": "Implementation of Abstract Factory's design pattern with PHP",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
