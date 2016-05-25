@@ -6,18 +6,19 @@ use FForattini\Factory\iFactory;
 use FForattini\Factory\iProduct;
 
 /**
- * On this test we will generate from a generic Factory concept and
- * specialize this object on a Cadillac factory.
+ * In this example we will generate a Cadillac factory from a generic
+ * Factory concept from our iFactory interface.
  * 
- * PS: Here i'm just passing the factory to the object thinking on
- * the relation between both, this is optional.
+ * Here i'm just passing the factory to the object minding on relation
+ * database and to show that the car can receive an iFactory object,
+ * but ofc this is an optional setting.
  */
 
 class CadillacFactory implements iFactory
 {
-	public function create($car)
+	public function create(...$args)
 	{
-		if($car == 'Deville') return new Deville($this);
+		if($args[0] == 'Deville') return new Deville($this);
 	}
 }
 
@@ -36,7 +37,10 @@ class Deville implements iProduct
 }
 
 /**
- * 
+ * Steps:
+ * 1 - Create a Cadillac factory and check if it was created.
+ * 2 - Ask to create a Deville model and check if it was created.
+ * 3 - Check which year it was build.
  */
 
 class FactoryTest extends PHPUnit_Framework_TestCase
@@ -44,6 +48,7 @@ class FactoryTest extends PHPUnit_Framework_TestCase
     public function testIfCanCreateCarFactory()
     {
     	$factory = new CadillacFactory();
+        $this->assertEquals(is_null($factory), false);
     	$car = $factory->create('Deville');
         $this->assertEquals(is_null($car), false);
         $this->checkCarYear($car);
