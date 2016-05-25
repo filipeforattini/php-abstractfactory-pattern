@@ -2,7 +2,7 @@
 
 namespace FForattini\Factory;
 
-interface AbstractProduct
+interface iProduct
 {
 
 }
