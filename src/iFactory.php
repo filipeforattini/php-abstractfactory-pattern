@@ -14,6 +14,6 @@ interface iFactory
 	 * @param  string $args
 	 * @return AbstractProduct
 	 */
-	public function create($args);
+	public function create(...$args);
 
 }
