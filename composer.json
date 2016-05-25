@@ -1,6 +1,5 @@
 {
     "name": "filipeforattini/php-abstractfactory-pattern",
-    "description": "Example of Abstract Factory implemented on PHP",
     "type": "library",
     "license": "MIT",
     "authors": [
