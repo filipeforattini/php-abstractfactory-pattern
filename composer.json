@@ -10,10 +10,9 @@
             "email": "filipeforattini1@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
-        "psr-0": {
-            "FForattini\\Factory": "src"
+        "psr-4": {
+            "FForattini\\Factory\\": "src"
         }
     },
     "require-dev": {
