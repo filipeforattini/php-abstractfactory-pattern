@@ -1,11 +1,7 @@
 <?php
+namespace FForattini\Patterns\AbstractFactory;
 
-namespace FForattini\Factory;
-
-/**
- * iProduct
- */
-interface iProduct
+interface ProductInterface
 {
 
 }
