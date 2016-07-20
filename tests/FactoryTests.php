@@ -2,8 +2,8 @@
 
 require __dir__.'\\..\\vendor\\autoload.php';
 
-use FForattini\Factory\iFactory;
-use FForattini\Factory\iProduct;
+use FForattini\Patterns\AbstractFactory\FactoryInterface;
+use FForattini\Patterns\AbstractFactory\ProductInterface;
 
 /**
  * In this example we will generate a Cadillac factory from a generic
@@ -14,8 +14,13 @@ use FForattini\Factory\iProduct;
  * but ofc this is an optional setting.
  */
 
-class CadillacFactory implements iFactory
+class CadillacFactory implements FactoryInterface
 {
+    /**
+     * Generates a Product
+     * @param  array $args
+     * @return ProductInterface
+     */
 	public function create(...$args)
 	{
 		if($args[0] == 'Deville') return new Deville($this);
@@ -27,10 +32,11 @@ class CadillacFactory implements iFactory
  * this case we are going to generate Deville 1958 cars.
  */
 
-class Deville implements iProduct
+class Deville implements ProductInterface
 {
 	public $year = 1958;
-    public function __construct(iFactory $factory)
+
+    public function __construct(FactoryInterface $factory)
     {
         $this->factory = $factory;
     }
@@ -53,7 +59,8 @@ class FactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(is_null($car), false);
         $this->checkCarYear($car);
     }
-    public function checkCarYear(iProduct $car)
+
+    public function checkCarYear(ProductInterface $car)
     {
         $this->assertEquals($car->year, 1958);   
     }

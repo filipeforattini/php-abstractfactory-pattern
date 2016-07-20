@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "FForattini\\Factory\\": "src"
+            "FForattini\\Patterns\\AbstractFactory\\": "src"
         }
     },
     "require": {
